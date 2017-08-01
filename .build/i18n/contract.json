@@ -1,0 +1,34 @@
+[
+  {
+    "id": "contract.minedBlock",
+    "defaultMessage": "Mined at block #{blockNumber}"
+  },
+  {
+    "id": "contract.buttons.close",
+    "defaultMessage": "Close"
+  },
+  {
+    "id": "contract.details.title",
+    "defaultMessage": "contract details"
+  },
+  {
+    "id": "contract.buttons.execute",
+    "defaultMessage": "execute"
+  },
+  {
+    "id": "contract.buttons.edit",
+    "defaultMessage": "edit"
+  },
+  {
+    "id": "contract.buttons.forget",
+    "defaultMessage": "forget"
+  },
+  {
+    "id": "contract.buttons.details",
+    "defaultMessage": "details"
+  },
+  {
+    "id": "contract.title",
+    "defaultMessage": "Contract Information"
+  }
+]

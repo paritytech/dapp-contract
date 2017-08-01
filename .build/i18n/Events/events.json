@@ -1,0 +1,10 @@
+[
+  {
+    "id": "contract.events.title",
+    "defaultMessage": "events"
+  },
+  {
+    "id": "contract.events.noEvents",
+    "defaultMessage": "No events has been sent from this contract."
+  }
+]
