@@ -27,9 +27,9 @@ import { Actionbar, Button, Page, Portal } from '@parity/ui';
 import { CancelIcon, DeleteIcon, EditIcon, PlayIcon, VisibleIcon } from '@parity/ui/Icons';
 import Editor from '@parity/ui/Editor';
 
-import EditMeta from '@parity/dapp-account/EditMeta';
-import Header from '@parity/dapp-account/Header';
-import Delete from '@parity/dapp-address/Delete';
+import EditMeta from '@parity/dapp-account/src/EditMeta';
+import Header from '@parity/dapp-account/src/Header';
+import Delete from '@parity/dapp-address/src/Delete';
 
 import ExecuteContract from './ExecuteContract';
 import Events from './Events';
