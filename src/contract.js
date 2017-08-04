@@ -29,7 +29,7 @@ import Editor from '@parity/ui/Editor';
 
 import EditMeta from '@parity/dapp-account/src/EditMeta';
 import Header from '@parity/dapp-account/src/Header';
-import Delete from '@parity/dapp-address/src/Delete';
+import Delete from '@parity/dapp-account/src/DeleteAddress';
 
 import ExecuteContract from './ExecuteContract';
 import Events from './Events';
