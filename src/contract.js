@@ -14,8 +14,7 @@
 // You should have received a copy of the GNU General Public License
 // along with Parity.  If not, see <http://www.gnu.org/licenses/>.
 
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import React, { Component, PropTypes } from 'react';
 import { FormattedMessage } from 'react-intl';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -23,6 +22,7 @@ import BigNumber from 'bignumber.js';
 
 import { newError } from '@parity/shared/redux/actions';
 import { setVisibleAccounts } from '@parity/shared/redux/providers/personalActions';
+import { getSender, loadSender } from '@parity/shared/util/tx';
 import { Actionbar, Button, Page, Portal } from '@parity/ui';
 import { CancelIcon, DeleteIcon, EditIcon, PlayIcon, VisibleIcon } from '@parity/ui/Icons';
 import Editor from '@parity/ui/Editor';
@@ -46,7 +46,6 @@ class Contract extends Component {
     setVisibleAccounts: PropTypes.func.isRequired,
 
     accounts: PropTypes.object,
-    accountsInfo: PropTypes.object,
     contracts: PropTypes.object,
     netVersion: PropTypes.string.isRequired,
     params: PropTypes.object
@@ -54,7 +53,7 @@ class Contract extends Component {
 
   state = {
     contract: null,
-    fromAddress: '',
+    fromAddress: getSender(),
     showDeleteDialog: false,
     showEditDialog: false,
     showExecuteDialog: false,
@@ -78,6 +77,13 @@ class Contract extends Component {
     api
       .subscribe('eth_blockNumber', this.queryContract)
       .then(blockSubscriptionId => this.setState({ blockSubscriptionId }));
+
+    loadSender(api)
+      .then((defaultAccount) => {
+        if (defaultAccount !== this.state.fromAddress) {
+          this.onFromAddressChange(null, defaultAccount);
+        }
+      });
   }
 
   componentWillReceiveProps (nextProps) {
@@ -122,7 +128,7 @@ class Contract extends Component {
   }
 
   render () {
-    const { accountsInfo, contracts, netVersion, params } = this.props;
+    const { contracts, netVersion, params } = this.props;
     const { allEvents, contract, queryValues, loadingEvents } = this.state;
     const account = contracts[params.address];
 
@@ -144,7 +150,6 @@ class Contract extends Component {
             { this.renderBlockNumber(account.meta) }
           </Header>
           <Queries
-            accountsInfo={ accountsInfo }
             contract={ contract }
             values={ queryValues }
           />
@@ -524,12 +529,11 @@ class Contract extends Component {
 }
 
 function mapStateToProps (state) {
-  const { accounts, accountsInfo, contracts } = state.personal;
+  const { accounts, contracts } = state.personal;
   const { netVersion } = state.nodeStatus;
 
   return {
     accounts,
-    accountsInfo,
     contracts,
     netVersion
   };

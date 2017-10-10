@@ -34,7 +34,6 @@ class InputQuery extends Component {
   };
 
   static propTypes = {
-    accountsInfo: PropTypes.object.isRequired,
     contract: PropTypes.object.isRequired,
     inputs: arrayOrObjectProptype().isRequired,
     outputs: arrayOrObjectProptype().isRequired,
@@ -118,7 +117,7 @@ class InputQuery extends Component {
 
   renderResults () {
     const { results, isLoading } = this.state;
-    const { accountsInfo, outputs } = this.props;
+    const { outputs } = this.props;
 
     if (isLoading) {
       return (
@@ -139,7 +138,6 @@ class InputQuery extends Component {
       .map((out, index) => {
         const input = (
           <TypedInput
-            accounts={ accountsInfo }
             allowCopy
             isEth={ false }
             param={ out.type }
