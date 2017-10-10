@@ -192,7 +192,6 @@ export default class DetailsStep extends Component {
             value={ values[index] }
             error={ valuesError[index] }
             onChange={ onChange }
-            accounts={ accounts }
             param={ input.type }
             isEth={ false }
           />
