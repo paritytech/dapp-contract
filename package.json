@@ -21,6 +21,9 @@
     "watch": "webpack --colors --progress --watch"
   },
   "devDependencies": {
+    "@parity/api": "^2",
+    "@parity/shared": "^2",
+    "@parity/ui": "^2",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-eslint": "^7.2.3",
@@ -69,10 +72,7 @@
     "webpack": "^3.5.5"
   },
   "dependencies": {
-    "@parity/api": "^2",
-    "@parity/dapp-account": "paritytech/dapp-account",
-    "@parity/shared": "^2",
-    "@parity/ui": "^2"
+    "@parity/dapp-account": "paritytech/dapp-account"
   },
   "peerDependencies": {}
 }
