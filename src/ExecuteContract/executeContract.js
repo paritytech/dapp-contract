@@ -20,7 +20,7 @@ import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import { connect } from 'react-redux';
 
-import { toWei } from '@parity/api/util/wei';
+import { toWei } from '@parity/api/lib/util/wei';
 import { parseAbiType } from '@parity/shared/util/abi';
 import { MAX_GAS_ESTIMATION } from '@parity/shared/util/constants';
 import { setSender } from '@parity/shared/util/tx';
