@@ -21,9 +21,9 @@ import { FormattedMessage } from 'react-intl';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import { newError } from '@parity/shared/redux/actions';
-import { arrayOrObjectProptype } from '@parity/shared/util/proptypes';
-import { parseAbiType } from '@parity/shared/util/abi';
+import { newError } from '@parity/shared/lib/redux/actions';
+import { arrayOrObjectProptype } from '@parity/shared/lib/util/proptypes';
+import { parseAbiType } from '@parity/shared/lib/util/abi';
 import { Button, Container, Progress, TypedInput } from '@parity/ui';
 
 import styles from './queries.css';

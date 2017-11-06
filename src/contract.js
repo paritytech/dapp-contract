@@ -20,12 +20,12 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import BigNumber from 'bignumber.js';
 
-import { newError } from '@parity/shared/redux/actions';
-import { setVisibleAccounts } from '@parity/shared/redux/providers/personalActions';
-import { getSender, loadSender } from '@parity/shared/util/tx';
+import { newError } from '@parity/shared/lib/redux/actions';
+import { setVisibleAccounts } from '@parity/shared/lib/redux/providers/personalActions';
+import { getSender, loadSender } from '@parity/shared/lib/util/tx';
 import { Actionbar, Button, Page, Portal } from '@parity/ui';
-import { CancelIcon, DeleteIcon, EditIcon, PlayIcon, VisibleIcon } from '@parity/ui/Icons';
-import Editor from '@parity/ui/Editor';
+import { CancelIcon, DeleteIcon, EditIcon, PlayIcon, VisibleIcon } from '@parity/ui/lib/Icons';
+import Editor from '@parity/ui/lib/Editor';
 
 import EditMeta from '@parity/dapp-account/src/EditMeta';
 import Header from '@parity/dapp-account/src/Header';
